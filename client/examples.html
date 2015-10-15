@@ -234,7 +234,8 @@
       <ul>
         <li>
           <blockquote>
-            Your form template <b>must not</b> contain any <code class="language-html">&lt;form&gt;</code> tags!  MaterializeModal will wrap your template in its own form and take care of the submission & traversal logic -- so just pass your inputs please!  See the example above.
+             MaterializeModal will wrap your template in its own form and take care of the submission & traversal logic -- so just pass your inputs please!  See the example above.
+             Your form template <b>should probably not</b> contain any <code class="language-html">&lt;form&gt;</code> tags, but if you do MaterializeModal is set up to use your inner form and not the one it wraps around your bodyTemplate! 
           </blockquote>
         </li>
         <li>
