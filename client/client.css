@@ -1,11 +1,10 @@
 html {
-  font-size: 1em;
+  font-size: 0.9rem;
 }
 body {
   padding-bottom: 3em;
 }
 h1 {
-  font-size: 3rem;
   word-break: break-all;
 }
 .toc-wrapper {

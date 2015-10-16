@@ -3,12 +3,33 @@
   <p>
     Use this to display a simple dismissable message to the user.
   </p>
+  <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s6">
+          <a href="#message-javascript" class="active">Javascript</a>
+        </li>
+        <li class="tab col s6">
+          <a href="#message-coffeescript" class="active">Coffeescript</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="message-javascript">
   {{#prism language="javascript" class="line-numbers"}}
   MaterializeModal.message({
     title: "MaterializeModal Message!",
     message: "Put your message content here!"
   });
   {{/prism}}
+  </div>
+  <div id="message-coffeescript">
+  {{#prism language="javascript" class="line-numbers"}}
+  MaterializeModal.message
+    title: "MaterializeModal Message!"
+    message: "Put your message content here!"
+  {{/prism}}
+  </div>
   <p class="example-trigger center">
     <button id="example-message" type="button" class="waves-effect waves-light btn-large blue">Show me a Message!</button>
   </p>
@@ -161,10 +182,13 @@
   <div class="row">
     <div class="col s12">
       <ul class="tabs">
-        <li class="tab col s6">
+        <li class="tab col s4">
           <a href="#form-javascript" class="active">Javascript</a>
         </li>
-        <li class="tab col s6">
+        <li class="tab col s4">
+          <a href="#form-coffeescript" class="active">Coffeescript</a>
+        </li>
+        <li class="tab col s4">
           <a href="#form-html">HTML</a>
         </li>
       </ul>
@@ -178,14 +202,28 @@
       callback: function(error, response) {
         if (response.submit) {
           // Iterate over form results & display.
-          for (var field in response.value) {
-            Materialize.toast(field + ": " + response.value[field], 5000, "green");
+          for (var field in response.form) {
+            Materialize.toast(field + ": " + response.form[field], 5000, "green");
           }
         } else {
           Materialize.toast("Cancelled by user!", 5000, "red");
         }
       }
     });
+    {{/prism}}
+  </div>
+  <div id="form-coffeescript">
+    {{#prism language="coffeescript" class="line-numbers"}}
+    MaterializeModal.form
+      title: "Enter some Data!"
+      bodyTemplate: "my-form"
+      callback: (error, response) ->
+        if response?.submit
+          #Iterate over form results & display.
+          for key, value of response.form) {
+            Materialize.toast("#{key}: #{value}", 5000, "green")
+        else
+          Materialize.toast("Cancelled by user!", 5000, "red")
     {{/prism}}
   </div>
   <div id="form-html">

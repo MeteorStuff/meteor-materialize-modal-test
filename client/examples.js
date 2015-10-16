@@ -97,8 +97,8 @@ Template.form.events({
       callback: function(error, response) {
         if (response.submit) {
           // Iterate over form results & display.
-          for (var field in response.value) {
-            Materialize.toast(field + ": " + response.value[field], 5000, "green");
+          for (var field in response.form) {
+            Materialize.toast(field + ": " + response.form[field], 5000, "green");
           }
         } else {
           Materialize.toast("Cancelled by user!", 5000, "red");
