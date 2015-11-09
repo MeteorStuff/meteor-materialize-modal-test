@@ -22,4 +22,4 @@ insecure                # Allow all DB writes from clients (for prototyping)
 reactive-var
 gadicohen:prism
 meteorstuff:materialize-modal
-materialize:materialize@0.97.0
+materialize:materialize
