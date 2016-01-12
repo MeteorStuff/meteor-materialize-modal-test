@@ -2,7 +2,8 @@ Template.message.events({
   "click button#example-message": function(e, tmpl) {
     MaterializeModal.message({
       title: "MaterializeModal Message!",
-      message: "Put your message content here!"
+      message: "Put your message content here!",
+      outDuration: 5000
     });
   }
 });
@@ -126,6 +127,19 @@ Template.buttons.events({
       message: "Here's an example with custom HTML content!",
       closeLabel: '<i class="material-icons left red-text">exit_to_app</i> No',
       submitLabel: '<i class="material-icons left green-text">done</i> Yes'
+    });
+  }
+});
+
+Template.options.events({
+  "click button#example-options": function(e, tmpl) {
+     MaterializeModal.confirm({
+      message: "Here's an example with options!",
+      opacity: .5, // Opacity of modal background
+      inDuration: 2000, // Transition in duration
+      outDuration: 4000, // Transition out duration
+      ready: function() { alert('Ready'); }, // Callback for Modal open
+      complete: function() { alert('Closed'); } // Callback for Modal close
     });
   }
 });
