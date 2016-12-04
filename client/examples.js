@@ -1,5 +1,8 @@
+
+
 Template.message.events({
   "click button#example-message": function(e, tmpl) {
+    console.log("example-message");
     MaterializeModal.message({
       title: "MaterializeModal Message!",
       message: "Put your message content here!",
